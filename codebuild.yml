@@ -9,6 +9,7 @@ phases:
       - pwd
       - aws s3 cp s3://deepstream-test/deepstream-5.1_5.1.0-1_amd64.deb /codebuild/output/deepstream-5.1_5.1.0-1_amd64.deb
       - aws s3 cp s3://deepstream-test/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /codebuild/output/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
+      - cd /codebuild/output/
       - ls -ll
 #       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ECR_URL}
 #       - chmod +x tag.sh
