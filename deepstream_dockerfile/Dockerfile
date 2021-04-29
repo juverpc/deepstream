@@ -38,7 +38,7 @@ RUN sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb &&
     rm cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
 
 # install tensorrt
-WORKDIR /codebuild/output/src719882557/src
+
 COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
 RUN dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb && \
     apt-key add /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
