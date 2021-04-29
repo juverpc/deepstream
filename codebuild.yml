@@ -15,7 +15,7 @@ phases:
   build:  
     commands:
       - docker-compose build
-       - ./tag.sh
+      - ./tag.sh
 
          
   post_build:
