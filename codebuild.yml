@@ -4,6 +4,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - uname -a
       - apt-get update
       - aws s3 ls
       - pwd
