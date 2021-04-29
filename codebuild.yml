@@ -4,23 +4,24 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - yum update -y
+  #    - yum update -y
       - aws s3 ls
       - pwd
-      - aws s3 cp s3://deepstream-test/deepstream-5.1_5.1.0-1_amd64.deb /var/lib/docker/tmp/docker-builder914813093/deepstream-5.1_5.1.0-1_amd64.deb
-      - aws s3 cp s3://deepstream-test/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /var/lib/docker/tmp/docker-builder914813093/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ECR_URL}
-      - chmod +x tag.sh
-      - chmod +x push_ecr.sh
-  build:  
-    commands:
-      - docker-compose build
-      - ./tag.sh
-      - docker images | grep demo
+      - aws s3 cp s3://deepstream-test/deepstream-5.1_5.1.0-1_amd64.deb deepstream-5.1_5.1.0-1_amd64.deb
+      - aws s3 cp s3://deepstream-test/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
+      - ls -ll
+#       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ECR_URL}
+#       - chmod +x tag.sh
+#       - chmod +x push_ecr.sh
+#   build:  
+#     commands:
+#       - docker-compose build
+#       - ./tag.sh
+#       - docker images | grep demo
          
-  post_build:
-    commands:
-      - ./push_ecr.sh
+#   post_build:
+#     commands:
+#       - ./push_ecr.sh
    
 
-
+# /var/lib/docker/tmp/docker-builder345060030/
