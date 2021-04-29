@@ -38,7 +38,8 @@ RUN sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb &&
     rm cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
 
 # install tensorrt
-COPY /codebuild/output/src852881701/src/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
+WORKDIR /codebuild/output/src719882557/src
+COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
 RUN dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb && \
     apt-key add /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
     apt-get update && \
@@ -65,7 +66,7 @@ RUN git clone https://github.com/edenhill/librdkafka.git && cd librdkafka &&\
 
 # install deepstream
 # firt download deepstream from this site: https://developer.nvidia.com/deepstream-download
-COPY /codebuild/output/src852881701/src/deepstream-5.1_5.1.0-1_amd64.deb /root
+COPY deepstream-5.1_5.1.0-1_amd64.deb /root
 RUN apt-get install -y libgstrtspserver-1.0-0 libgstreamer-plugins-base1.0-dev && \
     apt-get install /root/deepstream-5.1_5.1.0-1_amd64.deb && \
     rm /root/deepstream-5.1_5.1.0-1_amd64.deb
