@@ -1,0 +1,11 @@
+version: '3'
+services:
+  
+  deepstream:
+    image: deepstream
+    build: ./deepstream_dockerfile
+  
+  # deepstreamrtsp:
+  #   image: deepstreamrtsp
+  #   build: ./FNB
+    
