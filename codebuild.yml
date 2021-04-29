@@ -5,7 +5,7 @@ phases:
   pre_build:
     commands:
       - uname -mrs
-      - yum update
+      - yum update -y
       - aws s3 ls
       - pwd
       - aws s3 cp s3://deepstream-test/deepstream-5.1_5.1.0-1_amd64.deb deepstream-5.1_5.1.0-1_amd64.deb
