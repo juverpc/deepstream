@@ -39,7 +39,7 @@ FROM public.ecr.aws/lts/ubuntu:latest
 
 # install tensorrt--
 
-COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
+COPY /codebuild/output/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
 # RUN dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb && \
 #     apt-key add /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
 #     apt-get update && \
@@ -66,7 +66,7 @@ COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /
 
 # install deepstream--
 # firt download deepstream from this site: https://developer.nvidia.com/deepstream-download--
-COPY deepstream-5.1_5.1.0-1_amd64.deb /root
+COPY /codebuild/output/deepstream-5.1_5.1.0-1_amd64.deb /root
 # RUN apt-get install -y libgstrtspserver-1.0-0 libgstreamer-plugins-base1.0-dev && \
 #     apt-get install /root/deepstream-5.1_5.1.0-1_amd64.deb && \
 #     rm /root/deepstream-5.1_5.1.0-1_amd64.deb
