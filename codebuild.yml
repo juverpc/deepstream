@@ -14,9 +14,9 @@ phases:
 #       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ECR_URL}
 #       - chmod +x tag.sh
 #       - chmod +x push_ecr.sh
-#   build:  
-#     commands:
-#       - docker-compose build
+   build:  
+     commands:
+       - docker-compose build
 #       - ./tag.sh
 #       - docker images | grep demo
          
