@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 as base
+FROM public.ecr.aws/lts/ubuntu:latest
 
 # install github and vim
 RUN apt-get install -y vim wget gnupg
