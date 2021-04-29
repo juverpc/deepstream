@@ -1,8 +1,7 @@
 FROM public.ecr.aws/lts/ubuntu:latest
 
 # install github and vim
-RUN sudo apt-get update &&\
-    apt-get -y install sudo
+RUN yum update -y 
 RUN apt-get install -y vim wget gnupg
 
 # skip any interactive configurations during installation 
