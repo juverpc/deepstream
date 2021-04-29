@@ -15,8 +15,6 @@ phases:
   build:  
     commands:
       - docker-compose build
-      - cd /codebuild/output/
-      - ls -ll
 #       - ./tag.sh
 #       - docker images | grep demo
          
