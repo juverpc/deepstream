@@ -40,13 +40,13 @@ FROM public.ecr.aws/lts/ubuntu:latest
 # install tensorrt--
 
 COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
- RUN dpkg -i ./deepstream_dockerfile/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb && \
-     apt-key add /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
+ RUN dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb && \
+     apt-key add - /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
      apt-get update && \
      apt-get install -y tensorrt && \
      sudo apt-get install uff-converter-tf && \
      sudo apt-get install python3-libnvinfer-dev && \
-     rm ./deepstream_dockerfile/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
+     rm /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
 
 # install python opencv--
 # python is required for librdkafka--
@@ -68,7 +68,7 @@ COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /
 # firt download deepstream from this site: https://developer.nvidia.com/deepstream-download--
 COPY deepstream-5.1_5.1.0-1_amd64.deb /root
  RUN apt-get install -y libgstrtspserver-1.0-0 libgstreamer-plugins-base1.0-dev && \
-     apt-get install ./deepstream_dockerfile/deepstream-5.1_5.1.0-1_amd64.deb && \
-     rm ./deepstream_dockerfile/deepstream-5.1_5.1.0-1_amd64.deb
+     apt-get install /root/deepstream-5.1_5.1.0-1_amd64.deb && \
+     rm /root/deepstream-5.1_5.1.0-1_amd64.deb
 
 # RUN rm -r /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226 /var/cuda-repo-10-1-local-10.1.243-418.87.00--
