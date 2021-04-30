@@ -51,8 +51,8 @@ FROM public.ecr.aws/lts/ubuntu:latest
 # install python opencv--
 # python is required for librdkafka--
  RUN sudo apt-get install -y python3.7 python3-pip && \ 
-     pip3 install opencv-python numpy && \
-     ln -s /usr/bin/python3 /usr/bin/python
+     pip3 install opencv-python numpy 
+     #ln -s /usr/bin/python3 /usr/bin/python
 
 # install librdkafka---
  RUN sudo apt-get install -y git
