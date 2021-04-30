@@ -41,7 +41,7 @@ FROM public.ecr.aws/lts/ubuntu:latest
 
  COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
  RUN dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
- WORKDIR /var
+ WORKDIR /var/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226
  RUN ls -ll
  RUN apt-key add - /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
      apt-get update && \
