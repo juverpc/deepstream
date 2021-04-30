@@ -45,7 +45,7 @@ FROM public.ecr.aws/lts/ubuntu:latest
      sudo apt-get update && \
      sudo apt-get install -y tensorrt && \
      sudo apt-get install -y uff-converter-tf && \
-     sudo apt-get install python3-libnvinfer-dev && \
+     sudo apt-get install python3-libnvinfer && \
      rm /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
 
 # install python opencv--
