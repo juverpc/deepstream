@@ -40,7 +40,7 @@ FROM public.ecr.aws/lts/ubuntu:latest
 # install tensorrt--
 
  COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
- RUN dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb && \
+ RUN sudo dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb && \
      sudo apt-key add /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
      sudo apt-get update && \
      sudo apt-get install -y tensorrt && \
