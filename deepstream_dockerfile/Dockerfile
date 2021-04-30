@@ -41,12 +41,12 @@ FROM public.ecr.aws/lts/ubuntu:latest
 
  COPY nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb /root
  RUN sudo dpkg -i /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
- RUN sudo apt-key add /var/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub && \
-     sudo apt-get update && \
-     sudo apt-get install -y tensorrt && \
-     sudo apt-get install -y uff-converter-tf && \
-     sudo apt-get install python3-libnvinfer && \
-     rm /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
+ RUN sudo apt-key add /var/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226/7fa2af80.pub 
+ RUN sudo apt-get update 
+ RUN sudo apt-get install -y tensorrt
+ RUN sudo apt-get install -y uff-converter-tf
+ RUN sudo apt-get install python3-libnvinfer
+ RUN rm /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
 
 # install python opencv--
 # python is required for librdkafka--
