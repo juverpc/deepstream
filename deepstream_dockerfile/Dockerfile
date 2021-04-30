@@ -45,13 +45,13 @@ FROM public.ecr.aws/lts/ubuntu:latest
      sudo apt-get update && \
      sudo apt-get install -y tensorrt && \
      sudo apt-get install -y uff-converter-tf && \
-     sudo apt-get install -y python3-libnvinfer-dev && \
+     sudo apt-get install python3-libnvinfer-dev && \
      rm /root/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
 
 # install python opencv--
 # python is required for librdkafka--
  RUN sudo apt-get install -y python3.7 python3-pip && \ 
-     pip3 install -y opencv-python numpy && \
+     pip3 install opencv-python numpy && \
      ln -s /usr/bin/python3 /usr/bin/python
 
 # install librdkafka---
@@ -68,7 +68,7 @@ FROM public.ecr.aws/lts/ubuntu:latest
 # firt download deepstream from this site: https://developer.nvidia.com/deepstream-download--
  COPY deepstream-5.1_5.1.0-1_amd64.deb /root
  RUN sudo apt-get install -y libgstrtspserver-1.0-0 libgstreamer-plugins-base1.0-dev && \
-     sudo apt-get install -y /root/deepstream-5.1_5.1.0-1_amd64.deb && \
+     sudo apt-get install /root/deepstream-5.1_5.1.0-1_amd64.deb && \
      rm /root/deepstream-5.1_5.1.0-1_amd64.deb
 
 # RUN rm -r /var/nv-tensorrt-repo-cuda11.1-trt7.2.3.4-ga-20210226 /var/cuda-repo-10-1-local-10.1.243-418.87.00--
