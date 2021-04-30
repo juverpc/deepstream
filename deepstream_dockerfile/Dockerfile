@@ -1,6 +1,8 @@
 FROM public.ecr.aws/lts/ubuntu:latest
 
 # install github and vim--
+ RUN cd /var
+ RUN ls -ll
  RUN apt-get update &&\
      apt-get install sudo -y
  RUN apt-get install -y vim wget gnupg
