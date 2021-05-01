@@ -7,7 +7,8 @@ phases:
       - yum update -y
       - aws s3 cp s3://deepstream-test/deepstream-5.1_5.1.0-1_amd64.deb ./deepstream_dockerfile/deepstream-5.1_5.1.0-1_amd64.deb
       - aws s3 cp s3://deepstream-test/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb ./deepstream_dockerfile/nv-tensorrt-repo-ubuntu1804-cuda11.1-trt7.2.3.4-ga-20210226_1-1_amd64.deb
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ECR_URL}
+#      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ECR_URL}
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/s5w6j9m1
       - chmod +x tag.sh
       - chmod +x push_ecr.sh
   build:  
