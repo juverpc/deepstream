@@ -2,7 +2,7 @@ version: '3'
 services:
   
   deepstream:
-    image: deepstream
+    image: deepstream:latest
     build: ./deepstream_dockerfile
   
   # deepstreamrtsp:
