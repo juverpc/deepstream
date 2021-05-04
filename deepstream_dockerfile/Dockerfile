@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lts/ubuntu:latest
+FROM public.ecr.aws/ubuntu/ubuntu:18.04_stable
 
 # install github and vim--
  RUN apt-get update &&\
