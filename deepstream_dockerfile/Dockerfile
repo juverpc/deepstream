@@ -17,7 +17,7 @@ FROM public.ecr.aws/ubuntu/ubuntu:18.04_stable
      gstreamer1.0-plugins-good \
      gstreamer1.0-plugins-bad \
      gstreamer1.0-plugins-ugly \
-    gstreamer1.0-libav \
+     gstreamer1.0-libav \
      libgstrtspserver-1.0-0 \
      libjansson4
 
@@ -52,7 +52,7 @@ FROM public.ecr.aws/ubuntu/ubuntu:18.04_stable
 # python is required for librdkafka--
  RUN sudo apt-get install -y python3.7 python3-pip  
  RUN sudo apt-get install python3-pip
- RUN sudo python -m pip install --upgrade pip
+ RUN sudo python -m pip3 install --upgrade pip3
  RUN pip3 install opencv-python numpy 
      #ln -s /usr/bin/python3 /usr/bin/python
 
